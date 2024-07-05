@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 def principal(request):
     context={}
-    hola=1
+
     return render(request,'pages/principal.html',context)
 
 def nosotros(request):
