@@ -1,0 +1,58 @@
+{% load static %}
+<header>
+    <!--inicio-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="{% static "img/Logo.jpeg" %}" alt="" width="64" height="64" >
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 h2" >
+              <li class="nav-item px-3" >
+                <a class="nav-link active" aria-current="page" href="#"
+                  >Menu</a
+                >
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link" href="{% url "principal" %}">Inicio</a>
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link" href="{% url "nosotros" %}">Sobre Nosotros</a>
+              </li>
+              <li class="nav-item dropdown px-3">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="{% url "mesa" %}"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Comedores
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url "mesa" %}">Mesas</a></li>
+                  <li><a class="dropdown-item" href="{% url "silla" %}">Sillas</a></li>
+                </ul>
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link" href="{% url "inicio" %}">Inicia Sesion</a>
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link" href=""><img src="{% static "img/carrito.png" %}" style="width: 30px; height: 30px;" alt="">Carrito</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+</header>

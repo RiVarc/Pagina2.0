@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sillas</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+</head>
+<body background="{% static "img/purpura.png" %}">
+    {% include "base/header.html" %}
+    <main>
+        <!--inicio-->
+        <div class="row row-cols-2 row-cols-md-6 g-6">
+          <div class="col"></div>
+          <div class="col">
+            <div class="card text-bg-light mb-3" style="max-width: 20rem;">
+                    <img src="{% static "img/tolix.jpeg" %}" class="card-img-top" alt="..." width="200" height="200">
+                    <div class="card-header text-center">Tolix</div>
+                    <div class="card-body">
+                    <h5 class="card-title">Tolix</h5>
+                    <p class="card-text">Sillas tolix hechas de acero puro.</p>
+                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mueble1">Mas Detalles</a>
+                </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card text-bg-light mb-3" style="max-width: 20rem;">
+                <img src="{% static "img/Taburete_Master.jpeg" %}" class="card-img-top" alt="..." width="200" height="200">
+                <div class="card-header text-center">Taburete Master</div>
+                <div class="card-body">
+                <h5 class="card-title">Taburete Master</h5>
+                <p class="card-text">Taburete de 65 cm elaborada en plastico.</p>
+                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mueble3">Mas Detalles</a>
+                </div>
+            </div> 
+          </div>
+          
+          <div class="col">
+            <div class="card text-bg-light mb-3" style="max-width: 20rem;">
+                    <img src="{% static "img/Widson.jpeg" %}" class="card-img-top" alt="..." width="200" height="200">
+                    <div class="card-header text-center">Tolix</div>
+                    <div class="card-body">
+                    <h5 class="card-title">Widson</h5>
+                    <p class="card-text">Silla Windson hechas de plastico.</p>
+                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mueble5">Mas Detalles</a>
+                </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card text-bg-light mb-3" style="max-width: 20rem;">
+                <img src="{% static "img/Taburete.jpeg" %}" class="card-img-top" alt="..." width="200" height="200">
+                <div class="card-header text-center">Taburete</div>
+                <div class="card-body">
+                <h5 class="card-title">Taburete </h5>
+                <p class="card-text">Taburete de 65 cm elaborada de plastico.</p>
+                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mueble7">Mas Detalles</a>
+                </div>
+            </div> 
+          </div>
+        <!--FIN-->
+        <!-- Modal 1 -->
+        <div class="modal fade" id="mueble1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Comprar Tolix</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <h1 class="h1 text-center pb-3">Tolix</h1>
+                <img
+                  src="{% static "img/tolix.jpeg" %}"
+                  alt=""
+                  class="img-fluid rounded-2"
+                  width="500" height="500"
+                />
+                <div class="row p-5 fs-4">
+                  <ul>
+                    <li>Cantidad: 50 </li>
+                    <li>Medida: 40cm</li>
+                    <li>Precio: $18000 c/u</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <a class="btn btn-primary" href="/pagina/Compra.html" role="button">Comprar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal 3 -->
+        <div class="modal fade" id="mueble3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Comprar Taburete Master</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <h1 class="h1 text-center pb-3">Taburete Master</h1>
+              <img
+                src="{% static "img/Taburete_Master.jpeg" %}"
+                alt="..."
+                class="img-fluid rounded-2"
+                width="500" height="500"
+              />
+              <div class="row p-5 fs-4">
+                <ul>
+                  <li>Cantidad: 43</li>
+                  <li>Medida: 65cm </li>
+                  <li>Precio: $12000 c/u</li>
+                </ul>
+              </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <a class="btn btn-primary" href="/pagina/Compra.html" role="button">Comprar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal 5 -->
+        <div class="modal fade" id="mueble5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Comprar Widson</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <h1 class="h1 text-center pb-3">Widson</h1>
+                <img
+                  src="{% static "img/Widson.jpeg" %}"
+                  alt=""
+                  class="img-fluid rounded-2"
+                  width="500" height="500"
+                />
+                <div class="row p-5 fs-4">
+                  <ul>
+                    <li>Cantidad: 30 </li>
+                    <li>Medida: 40cm</li>
+                    <li>Precio: $6000 c/u</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <a class="btn btn-primary" href="/pagina/Compra.html" role="button">Comprar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal 7 -->
+        <div class="modal fade" id="mueble7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Comprar Taburete</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <h1 class="h1 text-center pb-3">Taburete</h1>
+              <img
+                src="{% static "img/Taburete.jpeg" %}"
+                alt="..."
+                class="img-fluid rounded-2"
+                width="500" height="500"
+              />
+              <div class="row p-5 fs-4">
+                <ul>
+                  <li>Cantidad: 20</li>
+                  <li>Medida: 65cm </li>
+                  <li>Precio: $6000 c/u</li>
+                </ul>
+              </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <a class="btn btn-primary" href="/pagina/Compra.html" role="button">Comprar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fin del Modal -->
+    </main>
+    <script src="{% static "js/bootstrap.bundle.min.js" %}"></script>
+</body>
+</html>

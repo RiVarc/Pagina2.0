@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrate</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+    
+</head>
+<body>
+    {% include "base/header.html" %}
+    <main>
+      <h5> Registro Usuario</h5>
+      <div class="card mb-4">
+        <div class="card-body">
+          <form id="Formu">
+            <label for="nombre">Nombre del Cliente:</label><br>
+            <input type="text" id="nombre" name="nombre" placeholder="ej: Alberto"><br><br>
+
+          <label for="contraseña">Contraseña:</label><br>
+          <input type="password" id="contraseña" name="contraseña" placeholder="Ingrese Contraseña"><br><br>
+          
+          <label for="confirmecontraseña"> Confirme Contraseña:</label><br>
+          <input type="password" id="confirmecontraseña" name="confirmecontraseña" placeholder="Confirme Contraseña"><br><br>
+          
+          <label for="email">Correo Electronico:</label><br>
+          <input type="email" id="email" name="email" placeholder="Ej:Alberto230@gmail.com"><br><br>
+
+          <button type="submit" class=""> Registrar </button>
+
+          <form action="{% url "inicio" %}">
+            <button type="submit"> Volver</button>
+          </form>
+
+
+  </main>
+    <script src="{% static "js/bootstrap.bundle.min.js" %}"></script>
+    <script>
+      document.getElementById('Formu').addEventListener('submit', function(event) {
+          event.preventDefault();
+
+          var nombre = document.getElementById("nombre").value;
+          var contraseña = document.getElementById("contraseña").value;
+          var confirmecontraseña = document.getElementById("confirmecontraseña").value;
+          var email = document.getElementById("email").value;
+
+          if (nombre === "") {
+              alert("Debe ingresar un Nombre");
+              return;
+          }
+
+          if (contraseña === "") {
+              alert("Falta Contraseña");
+              return;
+          }
+
+          if (confirmecontraseña === "") {
+              alert("Falta confirmar contraseña");
+              return;
+          }
+
+          if (contraseña !== confirmecontraseña) {
+              alert("Las contraseñas no coinciden");
+              return;
+          }
+
+          if (email === "") {
+            alert("Falta ingresar email");
+            return;
+          }
+
+          alert("Registro Exitoso");
+          event.target.submit();
+      });
+  </script>
+</body>
+</html>
