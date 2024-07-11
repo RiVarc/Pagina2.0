@@ -99,3 +99,7 @@ def agregar (request):
         context={
             "mensaje":"Registro exitosos"
         }
+def compra(request):
+    context={}
+
+    return render(request,'pages/compra.html',context)
