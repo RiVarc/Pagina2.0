@@ -25,7 +25,8 @@
         </style>
         <div class="content">
             <h1><span style="color:rgb(60, 0, 223);">Antes de finalizar, rellene sus datos.</span></h1>
-            <form action="gracias.html" method="post">
+            <form action="{% url "finalizar" %}" method="post">
+                {% csrf_token %}
                 <label for="nombre">Nombre del Cliente:</label><br>
                 <input type="text" id="nombre" name="nombre"><br><br>
                 

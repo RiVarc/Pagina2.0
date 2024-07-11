@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gracias</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+</head>
+<body background="{% static "img/purpura.png" %}">
+    {% include "base/header.html" %}
+    <main>
+        <style>
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+          }
+          .content {
+            text-align: center;
+          }
+        </style>
+        <h1><span style="color:rgba(0, 0, 0, 0.973);">Gracias por comprar con nosotros.</span></h1>
+        
+    </main>
+    <script src="{% static "js/bootstrap.bundle.min.js" %}"></script>
+</body>
+</html>

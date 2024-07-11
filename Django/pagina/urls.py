@@ -13,4 +13,5 @@ urlpatterns = [
    path('eliminar_si/<str:pk>', views.eliminar_si, name='eliminar_si'),
    path('agregar', views.agregar, name='agregar'),
    path('compra', views.compra, name='compra'),
+   path('finalizar', views.finalizar, name='finalizar'),
 ]

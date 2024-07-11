@@ -103,3 +103,8 @@ def compra(request):
     context={}
 
     return render(request,'pages/compra.html',context)
+
+def finalizar(request):
+    context={}
+
+    return render(request,'pages/finalizar.html',context)
