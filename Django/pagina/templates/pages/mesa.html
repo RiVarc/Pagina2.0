@@ -12,57 +12,26 @@
     <main>
         <!--inicio-->
         <div class="row row-cols-2 row-cols-md-6 g-6">
-        <div class="col"></div>
+
+        {%if mesas%}
+        {%for me in mesas%}
           <div class="col">
             <div class="card text-bg-light mb-3" style="max-width: 20rem;">
-                    <img src="{% static "img/redonda.jpeg" %}" class="card-img-top" alt="..."width="200" height="200">
+                    <img src="{% static "img/" %}{{me.imagen}}" class="card-img-top" alt="..."width="200" height="200">
                     <div class="card-header">Mesas</div>
                     <div class="card-body">
-                    <h5 class="card-title">Mesa de vidrio redonda</h5>
-                    <p class="card-text">Mesa redonda hecha de vidrio resistente.</p>
-                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mueble2">Mas Detalles</a>
+                    <h5 class="card-title">{{me.nombre}}</h5>
+                    <p class="card-text">{{me.descripcion}}.</p>
+                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#{{me.id_mesas}}">Mas Detalles</a>
                 </div>
             </div> 
           </div>
+          
 
-          <div class="col">
-            <div class="card text-bg-light mb-3" style="max-width: 20rem;">
-                <img src="{% static "img/Mesa_Negra.jpeg" %}" class="card-img-top" alt="..."width="200" height="200">
-                <div class="card-header">Mesas</div>
-                <div class="card-body">
-                <h5 class="card-title">Mesa redonda Negra</h5>
-                <p class="card-text">Mesa redonda negra principalmente hecha de plastico.</p>
-                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mueble4">Mas Detalles</a>
-                </div>
-            </div>
-          </div> 
-          <div class="col">
-            <div class="card text-bg-light mb-3" style="max-width: 20rem;">
-                <img src="{% static "img/Rectangular_vidrio.jpeg" %}" class="card-img-top" alt="..."width="200" height="200">
-                <div class="card-header">Mesas</div>
-                <div class="card-body">
-                <h5 class="card-title">Mesa Rectangular de Vidrio</h5>
-                <p class="card-text">Mesa rectangular hecha de vidrio resistente.</p>
-                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mueble6">Mas Detalles</a>
-                </div>
-            </div> 
-          </div>
-
-          <div class="col">
-            <div class="card text-bg-light mb-3" style="max-width: 20rem;">
-                <img src="{% static "img/tulip.jpeg" %}" class="card-img-top" alt="..."width="200" height="200">
-                <div class="card-header">Mesas</div>
-                <div class="card-body">
-                <h5 class="card-title">Tulip Blanca</h5>
-                <p class="card-text">Mesa redonda blanca principalmente hecha de plastico.</p>
-                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mueble8">Mas Detalles</a>
-                </div>
-            </div>
-          </div>
-        </div> 
+        
         <!--FIN-->
         <!-- Modal 2 -->
-        <div class="modal fade" id="mueble2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="{{me.id_mesas}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -70,18 +39,18 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <h1 class="h1 text-center pb-3">Mesa de vidrio redonda</h1>
+                <h1 class="h1 text-center pb-3">{{me.nombre}}</h1>
               <img
-                src="{% static "img/redonda.jpeg" %}"
+                src="{% static "img/" %}{{me.imagen}}"
                 alt=""
                 class="img-fluid rounded-2"
                 width="500" height="500"
               />
               <div class="row p-5 fs-4">
                 <ul>
-                  <li>Cantidad: 20</li>
+                  <li>Cantidad:{{me.cantidad}}</li>
                   <li>Medida: 80cm </li>
-                  <li>Precio: $34990 c/u</li>
+                  <li>Precio: ${{me.precio}} c/u</li>
                 </ul>
               </div>
               </div>
@@ -92,102 +61,10 @@
             </div>
           </div>
         </div>
-
-        <!-- Modal 4 -->
-        <div class="modal fade" id="mueble4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Comprar mesa</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <h1 class="h1 text-center pb-3">Mesa redonda negra</h1>
-              <img
-                src="{% static "img/Mesa_Negra.jpeg" %}"
-                alt="..."
-                class="img-fluid rounded-2"
-                width="500" height="500"
-              />
-              <div class="row p-5 fs-4">
-                <ul>
-                  <li>Cantidad: 20</li>
-                  <li>Medida: 80cm</li>
-                  <li>Precio: $30990 c/u</li>
-                </ul>
-              </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <a class="btn btn-primary" href="/pagina/Compra.html" role="button">Comprar</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
+        {% endif %}
+      </div> 
         
-        <!-- Modal 6 -->
-        <div class="modal fade" id="mueble6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Comprar mesa</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <h1 class="h1 text-center pb-3">Mesa de vidrio Rectangular</h1>
-              <img
-                src="{% static "img/Rectangular_vidrio.jpeg" %}"
-                alt=""
-                class="img-fluid rounded-2"
-                width="500" height="500"
-              />
-              <div class="row p-5 fs-4">
-                <ul>
-                  <li>Cantidad: 20</li>
-                  <li>Medida: 120cm </li>
-                  <li>Precio: $36990 c/u</li>
-                </ul>
-              </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <a class="btn btn-primary" href="/pagina/Compra.html" role="button">Comprar</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Modal 8 -->
-        <div class="modal fade" id="mueble8" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Comprar mesa</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <h1 class="h1 text-center pb-3">Tulip blanca</h1>
-                <img
-                  src="{% static "img/tulip.jpeg" %}"
-                  alt=""
-                  class="img-fluid rounded-2"
-                  width="500" height="500"
-                />
-                <div class="row p-5 fs-4">
-                  <ul>
-                    <li>Cantidad: 20</li>
-                    <li>Medida: 80cm </li>
-                    <li>Precio: $10000 c/u</li>
-                  </ul>
-                </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <a class="btn btn-primary" href="/pagina/Compra.html" role="button">Comprar</a>
-                </div>
-              </div>
-            </div>
-          </div>
         <!--fin del modal-->
     </main>
     <script src="{% static "js/bootstrap.bundle.min.js" %}"></script>

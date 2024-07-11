@@ -8,4 +8,8 @@ urlpatterns = [
    path('sillas', views.silla, name='silla'),
    path('iniciosesion', views.inicio, name='inicio'),
    path('registro', views.registro, name='registro'),
+   path('crud', views.crud, name='crud'),
+   path('eliminar_me/<str:pk>', views.eliminar_me, name='eliminar_me'),
+   path('eliminar_si/<str:pk>', views.eliminar_si, name='eliminar_si'),
+   path('agregar', views.agregar, name='agregar'),
 ]
